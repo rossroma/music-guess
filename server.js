@@ -15,12 +15,11 @@ const songsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'songs.json'), '
 const ITUNES_BASE = 'https://itunes.apple.com';
 
 const ERA_RANGE = {
-  '1960-1979': [1960, 1979],
-  '1980-1989': [1980, 1989],
+  'pre-1990': [0, 1989],
   '1990-1999': [1990, 1999],
   '2000-2009': [2000, 2009],
   '2010-2019': [2010, 2019],
-  '2020-2025': [2020, 2025],
+  '2020-2026': [2020, 2026],
 };
 
 async function itunesLookup(title, artist) {

@@ -7,9 +7,8 @@ const HIGH_SCORE_KEY = 'songguess_highscore';
 // ===== State =====
 const gameState = {
   config: {
-    lang: 'mandarin',
+    lang: 'any',
     era: 'any',
-    popularity: 'any',
     artist: '',
     difficulty: 'medium',
   },
@@ -92,7 +91,7 @@ function showScoreFloat(points, x, y) {
 // ===== Config UI =====
 function initConfigUI() {
   // Single-select chip groups
-  ['era-group', 'lang-group', 'popularity-group', 'difficulty-group'].forEach(groupId => {
+  ['era-group', 'lang-group', 'difficulty-group'].forEach(groupId => {
     const group = document.getElementById(groupId);
     group.querySelectorAll('.chip').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -107,9 +106,8 @@ function initConfigUI() {
 
 function getConfig() {
   return {
-    lang: document.querySelector('#lang-group .chip.active')?.dataset.value || 'mandarin',
+    lang: document.querySelector('#lang-group .chip.active')?.dataset.value || 'any',
     era: document.querySelector('#era-group .chip.active')?.dataset.value || 'any',
-    popularity: document.querySelector('#popularity-group .chip.active')?.dataset.value || 'any',
     artist: document.getElementById('artist-input').value.trim(),
     difficulty: document.querySelector('#difficulty-group .chip.active')?.dataset.value || 'medium',
   };
@@ -152,8 +150,8 @@ async function onStartGame() {
 }
 
 async function fetchSongs() {
-  const { lang, era, popularity, artist } = gameState.config;
-  const params = new URLSearchParams({ lang, era, popularity, count: '80' });
+  const { lang, era, artist } = gameState.config;
+  const params = new URLSearchParams({ lang, era, count: '80' });
   if (artist) params.set('artist', artist);
   const res = await fetch(`/api/game/songs?${params}`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
