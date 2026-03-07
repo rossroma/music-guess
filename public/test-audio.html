@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>音频诊断</title>
+<style>
+  body { font-family: monospace; padding: 20px; background: #111; color: #eee; }
+  h2 { color: #1DB954; }
+  .step { margin: 12px 0; padding: 12px; border-radius: 6px; background: #222; }
+  .step-title { font-weight: bold; margin-bottom: 6px; color: #aaa; font-size: 12px; text-transform: uppercase; }
+  .status { padding: 4px 8px; border-radius: 4px; display: inline-block; font-size: 13px; }
+  .ok { background: #1a3a1a; color: #1DB954; }
+  .err { background: #3a1a1a; color: #f66; }
+  .pending { background: #2a2a1a; color: #fa0; }
+  .info { background: #1a2a3a; color: #6af; }
+  button { background: #1DB954; color: #000; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; margin: 4px; }
+  button:hover { background: #17a347; }
+  input { background: #333; color: #eee; border: 1px solid #555; padding: 6px 10px; border-radius: 4px; width: 100%; box-sizing: border-box; font-family: monospace; font-size: 12px; }
+  #log { background: #1a1a1a; padding: 12px; border-radius: 6px; font-size: 12px; line-height: 1.8; max-height: 300px; overflow-y: auto; }
+  .log-ok { color: #1DB954; }
+  .log-err { color: #f66; }
+  .log-info { color: #6af; }
+  .log-warn { color: #fa0; }
+  audio { width: 100%; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h2>🔊 音频播放诊断工具</h2>
+
+<div class="step">
+  <div class="step-title">Step 1 — 测试 iTunes URL（直连，预期 CORS 失败）</div>
+  <div id="s1-status" class="status pending">等待测试</div>
+  <br><br>
+  <button onclick="testDirect()">直连测试</button>
+</div>
+
+<div class="step">
+  <div class="step-title">Step 2 — 测试代理接口 /api/audio/proxy（预期成功）</div>
+  <div id="s2-status" class="status pending">等待测试</div>
+  <br><br>
+  <button onclick="testProxy()">代理测试</button>
+</div>
+
+<div class="step">
+  <div class="step-title">Step 3 — 实际播放测试（需要点击按钮触发用户手势）</div>
+  <div id="s3-status" class="status pending">等待测试</div>
+  <input id="url-input" type="text" placeholder="输入 previewUrl 或留空用默认测试URL" />
+  <br><br>
+  <button onclick="testPlay()">▶ 点击播放</button>
+  <button onclick="stopPlay()">■ 停止</button>
+  <audio id="test-audio" controls></audio>
+</div>
+
+<div class="step">
+  <div class="step-title">Step 4 — 从 API 获取第一首歌并播放</div>
+  <div id="s4-status" class="status pending">等待测试</div>
+  <br><br>
+  <button onclick="testFromApi()">从 API 获取并播放</button>
+  <div id="s4-info" style="margin-top:8px; font-size:12px; color:#888;"></div>
+</div>
+
+<div class="step">
+  <div class="step-title">日志</div>
+  <div id="log"></div>
+</div>
+
+<script>
+const TEST_URL = 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/5c/03/52/5c035229-4b15-6f7d-b01b-105607a3f40b/mzaf_8905614538771957102.plus.aac.p.m4a';
+const audio = document.getElementById('test-audio');
+
+function log(msg, type = 'info') {
+  const el = document.getElementById('log');
+  const line = document.createElement('div');
+  line.className = 'log-' + type;
+  line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+  el.appendChild(line);
+  el.scrollTop = el.scrollHeight;
+}
+
+function setStatus(id, text, type) {
+  const el = document.getElementById(id);
+  el.textContent = text;
+  el.className = 'status ' + type;
+}
+
+// Step 1: 直连测试
+async function testDirect() {
+  setStatus('s1-status', '测试中...', 'pending');
+  log('开始直连测试: ' + TEST_URL, 'info');
+  try {
+    const res = await fetch(TEST_URL, { method: 'HEAD', mode: 'cors' });
+    setStatus('s1-status', `直连成功 (${res.status}) — 无 CORS 问题`, 'ok');
+    log('直连成功: HTTP ' + res.status, 'ok');
+  } catch (e) {
+    setStatus('s1-status', `直连失败 (CORS 拦截) — 符合预期`, 'err');
+    log('直连失败: ' + e.message + ' ← 这是 CORS 造成的，符合预期', 'warn');
+  }
+}
+
+// Step 2: 代理测试
+async function testProxy() {
+  setStatus('s2-status', '测试中...', 'pending');
+  const proxyUrl = '/api/audio/proxy?url=' + encodeURIComponent(TEST_URL);
+  log('开始代理测试: ' + proxyUrl, 'info');
+  try {
+    const res = await fetch(proxyUrl, { method: 'HEAD' });
+    if (res.ok) {
+      const ct = res.headers.get('content-type') || '未知';
+      setStatus('s2-status', `代理成功 (${res.status}) Content-Type: ${ct}`, 'ok');
+      log('代理成功: HTTP ' + res.status + ', Content-Type: ' + ct, 'ok');
+    } else {
+      setStatus('s2-status', `代理返回错误: HTTP ${res.status}`, 'err');
+      log('代理返回错误: HTTP ' + res.status, 'err');
+    }
+  } catch (e) {
+    setStatus('s2-status', '代理请求失败: ' + e.message, 'err');
+    log('代理请求失败: ' + e.message, 'err');
+  }
+}
+
+// Step 3: 实际播放
+function testPlay() {
+  const inputUrl = document.getElementById('url-input').value.trim();
+  let url = inputUrl || TEST_URL;
+
+  // 如果是 iTunes URL，走代理
+  if (url.startsWith('https://audio-ssl.itunes.apple.com/')) {
+    url = '/api/audio/proxy?url=' + encodeURIComponent(url);
+    log('使用代理 URL: ' + url, 'info');
+  } else {
+    log('使用直接 URL: ' + url, 'info');
+  }
+
+  setStatus('s3-status', '加载中...', 'pending');
+
+  audio.onerror = () => {
+    const err = audio.error;
+    const codes = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
+    const msg = err ? `MediaError code=${err.code} (${codes[err.code] || '?'}): ${err.message}` : '未知错误';
+    setStatus('s3-status', '播放失败: ' + msg, 'err');
+    log('MediaError: ' + msg, 'err');
+  };
+
+  audio.oncanplay = () => {
+    log('canplay 触发 — 音频已可播放', 'ok');
+  };
+
+  audio.onplaying = () => {
+    setStatus('s3-status', '✓ 正在播放！currentTime 应该在增加', 'ok');
+    log('playing 触发 — 正在播放', 'ok');
+  };
+
+  audio.onstalled = () => {
+    log('stalled 触发 — 数据加载停滞', 'warn');
+  };
+
+  audio.onwaiting = () => {
+    log('waiting 触发 — 等待数据缓冲', 'warn');
+  };
+
+  audio.ontimeupdate = () => {
+    document.getElementById('s3-status').textContent = `✓ 正在播放 currentTime=${audio.currentTime.toFixed(2)}s`;
+  };
+
+  audio.src = url;
+  audio.play().then(() => {
+    log('play() promise resolved', 'ok');
+  }).catch(e => {
+    setStatus('s3-status', 'play() 被拒绝: ' + e.name + ' - ' + e.message, 'err');
+    log('play() rejected: ' + e.name + ': ' + e.message, 'err');
+  });
+}
+
+function stopPlay() {
+  audio.onerror = null;
+  audio.ontimeupdate = null;
+  audio.onplaying = null;
+  audio.oncanplay = null;
+  audio.onstalled = null;
+  audio.onwaiting = null;
+  audio.pause();
+  audio.removeAttribute('src');
+  audio.load();
+  setStatus('s3-status', '已停止', 'info');
+  setStatus('s4-status', '已停止', 'info');
+  log('已停止播放', 'info');
+}
+
+// Step 4: 从 API 获取
+async function testFromApi() {
+  setStatus('s4-status', '请求 API...', 'pending');
+  log('请求 /api/game/songs?lang=any&era=any', 'info');
+  try {
+    const res = await fetch('/api/game/songs?lang=any&era=any');
+    const data = await res.json();
+    const songs = data.songs || [];
+    log('API 返回 ' + songs.length + ' 首歌', 'ok');
+
+    if (songs.length === 0) {
+      setStatus('s4-status', 'API 返回 0 首歌', 'err');
+      return;
+    }
+
+    const song = songs[0];
+    const info = `${song.name} — ${song.artists.join('/')}`;
+    document.getElementById('s4-info').textContent = `第一首: ${info} | previewUrl: ${song.previewUrl || '(空)'}`;
+    log('第一首: ' + info, 'info');
+    log('previewUrl: ' + (song.previewUrl || '(空)'), song.previewUrl ? 'ok' : 'err');
+
+    if (!song.previewUrl) {
+      setStatus('s4-status', 'previewUrl 为空，无法播放', 'err');
+      return;
+    }
+
+    setStatus('s4-status', '加载音频...', 'pending');
+    const proxyUrl = '/api/audio/proxy?url=' + encodeURIComponent(song.previewUrl);
+    document.getElementById('url-input').value = song.previewUrl;
+
+    audio.onerror = () => {
+      const err = audio.error;
+      const codes = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
+      const msg = err ? `code=${err.code} (${codes[err.code] || '?'})` : '未知';
+      setStatus('s4-status', '播放失败: ' + msg, 'err');
+      log('Step4 MediaError: ' + msg, 'err');
+    };
+    audio.ontimeupdate = () => {
+      document.getElementById('s4-status').textContent = `✓ 正在播放 "${info}" currentTime=${audio.currentTime.toFixed(2)}s`;
+      document.getElementById('s4-status').className = 'status ok';
+    };
+
+    audio.src = proxyUrl;
+    await audio.play();
+    log('play() resolved — 正在播放: ' + info, 'ok');
+    setStatus('s4-status', '▶ 正在播放: ' + info, 'ok');
+  } catch (e) {
+    setStatus('s4-status', '失败: ' + e.message, 'err');
+    log('Step4 失败: ' + e.message, 'err');
+  }
+}
+
+log('诊断页面已加载', 'info');
+log('浏览器: ' + navigator.userAgent, 'info');
+</script>
+</body>
+</html>

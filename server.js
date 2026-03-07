@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const songsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'songs.json'), 'utf8'));
+const songsDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'songs-summary.json'), 'utf8'));
 
 const ITUNES_BASE = 'https://itunes.apple.com';
 const GAME_ROUNDS = 10;
@@ -28,8 +28,7 @@ async function itunesLookup(title, artist) {
     entity: 'song',
     media: 'music',
     limit: '5',
-    country: 'TW',
-    lang: 'zh_tw',
+    country: 'cn'
   });
   const res = await fetch(url);
   if (!res.ok) return null;

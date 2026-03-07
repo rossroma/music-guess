@@ -61,9 +61,11 @@ vercel
 
 ```
 ├── server.js              # Express 服务 + iTunes API 封装
-├── songs.json             # 本地歌曲数据库（100 首华语经典）
+├── songs-summary.json     # 汇总后的歌曲库（由 scripts/aggregate-songs.js 生成）
 ├── vercel.json            # Vercel 部署配置
-├── data/                  # 原始榜单数据（用于扩充歌库）
+├── data/                  # 原始榜单 JSON（多年代/多榜单，见下方数据格式）
+├── scripts/
+│   └── aggregate-songs.js # 汇总 data/*.json 为 songs-summary.json（去重、补 initial/pinyin）
 ├── logs/                  # 自动生成：无试听链接的歌曲记录
 │   └── missing-preview.log
 └── public/
@@ -103,7 +105,11 @@ vercel
 
 ## 歌曲数据库
 
-`songs.json` 收录 100 首华语经典歌曲，包含以下字段：
+歌曲库来自 `data/` 目录下多份榜单 JSON，经 `scripts/aggregate-songs.js` 汇总去重后生成 `songs-summary.json`。服务端直接读取该文件。
+
+**数据格式（data 目录）**：每份 JSON 为歌曲数组，或对象内单一数组；每条记录包含 `rank`、`singer`、`song`、`year`、`lang`。脚本会统一为 `title`/`artist`，并自动计算 `initial`（拼音首字母）、`pinyin`（全拼）。
+
+**汇总后每条歌曲字段**：
 
 ```json
 {
@@ -117,7 +123,13 @@ vercel
 }
 ```
 
-`logs/missing-preview.log` 会自动记录本地库中 iTunes 找不到对应试听的歌曲，便于手动维护歌库质量。
+重新生成歌库：
+
+```bash
+node scripts/aggregate-songs.js
+```
+
+`logs/missing-preview.log` 会自动记录 iTunes 找不到试听链接的歌曲，便于维护歌库质量。
 
 ---
 
@@ -135,4 +147,6 @@ vercel
 
 ### 新增歌曲
 
-编辑 `songs.json`，按现有格式追加条目即可。`initial` 字段为歌名拼音首字母（全大写），`pinyin` 字段为完整拼音（空格分隔各字）。
+1. 在 `data/` 下新增或编辑榜单 JSON，格式为数组 `[{ "rank", "singer", "song", "year", "lang" }, ...]`，或对象 `{ "某key": [ ... ] }`。
+2. 运行 `node scripts/aggregate-songs.js` 重新生成 `songs-summary.json`。
+3. `initial`、`pinyin` 由脚本根据歌名自动生成（依赖 `pinyin` 包）。

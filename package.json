@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest tests/"
+    "test": "jest tests/",
+    "aggregate-songs": "node scripts/aggregate-songs.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +14,8 @@
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pinyin": "^4.0.0"
   },
   "devDependencies": {
     "jest": "^30.2.0"

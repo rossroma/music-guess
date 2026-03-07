@@ -14,8 +14,8 @@
 
 - **后端**：Node.js + Express（`server.js`）
 - **前端**：纯 HTML + CSS + JavaScript（无框架，SPA）
-- **音乐数据源**：本地 `songs.json`（100首华语经典歌曲）
-- **音频 / 封面**：Apple Music API（MusicKit JS）
+- **音乐数据源**：本地 `songs-summary.json`（由 `data/` 下多份榜单经 `scripts/aggregate-songs.js` 汇总去重生成，千首级）
+- **音频 / 封面**：iTunes Search API（免费，无需鉴权；试听片段 + 封面图）
 - **存储**：localStorage（历史最高分缓存）
 - **部署**：Vercel（`@vercel/node` + `@vercel/static`）
 
@@ -23,10 +23,9 @@
 
 | 变更项 | 原版 | 当前版本 |
 |-------|------|---------|
-| 音乐数据源 | Spotify Web API | 本地 `songs.json` |
-| 音频播放 | Spotify `preview_url`（30s 片段） | Apple Music API（MusicKit JS） |
-| 热度筛选 | Spotify `popularity` 字段 | 已移除（本地库无此字段） |
-| 封面图 | Spotify 专辑封面 URL | Apple Music API 返回的 `artwork.url` |
+| 音乐数据源 | Spotify Web API | 本地 `songs-summary.json`（由 data/ 榜单汇总） |
+| 音频 / 封面 | Spotify `preview_url`、专辑封面 | iTunes Search API（试听 URL + artwork） |
+| 热度筛选 | Spotify `popularity` 字段 | 已移除（歌库无此字段） |
 
 ---
 
@@ -59,7 +58,7 @@
 | **语言** | 国语（`zh`）/ 粤语（`yue`）/ 不限 | 服务端按 `lang` 字段精确匹配 |
 | **歌手** | 文本输入（可选，留空则不限） | 服务端按 `artist` 字段包含匹配 |
 
-> 注意：前端传给 `/api/game/songs` 的 `lang` 参数须与 `songs.json` 中的值一致：`zh`（国语）或 `yue`（粤语）。
+> 注意：前端传给 `/api/game/songs` 的 `lang` 参数须与 `songs-summary.json` 中的值一致：`zh`（国语）或 `yue`（粤语）。
 
 **筛选 UI 设计**：
 
@@ -144,15 +143,19 @@
 ### 4.1 文件结构
 
 ```
-spotify-demo/
-├── server.js          # Express 后端
-├── songs.json         # 本地歌曲数据库（100首）
-├── vercel.json        # Vercel 部署配置
+music-guess/
+├── server.js              # Express 后端（读 songs-summary.json）
+├── songs-summary.json     # 汇总后的歌曲库（由 scripts/aggregate-songs.js 生成）
+├── vercel.json            # Vercel 部署配置
 ├── package.json
+├── data/                  # 原始榜单 JSON（多年代、多文件）
+├── scripts/
+│   └── aggregate-songs.js # 汇总 data/*.json → songs-summary.json（去重、initial/pinyin）
+├── logs/                  # 无试听链接记录（missing-preview.log）
 └── public/
-    ├── index.html     # 游戏主页（SPA，4个视图）
-    ├── game.css       # 样式（深色主题，移动端优先）
-    └── game.js        # 游戏逻辑（状态机）
+    ├── index.html         # 游戏主页（SPA，4 个视图）
+    ├── game.css           # 样式（深色主题，移动端优先）
+    └── game.js            # 游戏逻辑（状态机）
 ```
 
 ### 4.2 视图划分（SPA）
@@ -206,9 +209,13 @@ spotify-demo/
 
 ## 五、技术实现
 
-### 5.1 本地歌曲数据库（songs.json）
+### 5.1 本地歌曲数据库（songs-summary.json）
 
-每条记录结构：
+歌曲库由 `data/` 目录下多份榜单 JSON 经 `scripts/aggregate-songs.js` 汇总生成：按「歌名|歌手」去重，保留最早年份，并自动计算 `initial`、`pinyin`。**无 `popularity` 字段**。
+
+**data 目录数据格式**：每份文件为根数组 `[{ rank, singer, song, year, lang }, ...]` 或对象内单数组（如 `{ "top200_songs_2015_2020": [ ... ] }`）。每条可带 `year`、`lang`，脚本统一为 `title`/`artist` 并补全首字母与拼音。
+
+**汇总后每条记录结构**：
 
 ```json
 {
@@ -224,15 +231,15 @@ spotify-demo/
 
 | 字段 | 说明 |
 |-----|------|
-| `id` | 唯一整数 ID |
+| `id` | 唯一整数 ID（汇总后顺序编号） |
 | `title` | 歌曲名称 |
 | `artist` | 歌手名 |
-| `year` | 发行年份 |
+| `year` | 发行年份（多榜单取最早） |
 | `lang` | 语言：`zh`（国语）/ `yue`（粤语） |
-| `initial` | 歌名拼音首字母缩写（用于搜索） |
-| `pinyin` | 歌名完整拼音（用于搜索） |
+| `initial` | 歌名拼音首字母（大写，用于搜索/筛选） |
+| `pinyin` | 歌名完整拼音小写（用于搜索） |
 
-当前收录约 100 首华语经典歌曲，涵盖周杰伦、蔡依林、张韶涵、苏打绿、五月天、王菲、陈奕迅、Beyond、刘若英、张惠妹等。
+重新生成歌库：`node scripts/aggregate-songs.js`。
 
 ### 5.2 后端 API
 
@@ -258,21 +265,20 @@ spotify-demo/
       "id": "1",
       "name": "青花瓷",
       "artists": ["周杰伦"],
-      "album": "",
-      "coverUrl": "",
-      "previewUrl": "",
-      "popularity": null,
+      "album": "《依然范特西》",
+      "coverUrl": "https://...artworkUrl100...",
+      "previewUrl": "https://...preview...",
       "year": 2007,
       "lang": "zh",
       "initial": "QHC",
       "pinyin": "qinghuaci"
     }
   ],
-  "total": 50
+  "total": 10
 }
 ```
 
-> `coverUrl` 和 `previewUrl` 当前为空字符串，待 Apple Music API 接入后填充。
+`coverUrl`、`previewUrl` 由 iTunes Search API 查询得到；若无试听链接则该曲不返回，并写入 `logs/missing-preview.log`。
 
 #### `GET /api/search/tracks`
 
@@ -352,7 +358,7 @@ audio.addEventListener('timeupdate', () => {
 });
 ```
 
-音频来源为 Apple Music API 通过 MusicKit JS 返回的预览片段 URL（`previewUrl`），封面图使用 `artwork.url`（替换尺寸占位符后使用）。
+音频来源为 **iTunes Search API** 返回的 `previewUrl`（试听片段），封面图使用 `artworkUrl100` 替换尺寸为 300x300 后作为 `coverUrl`。
 
 ### 5.6 localStorage 历史分数
 
@@ -388,7 +394,7 @@ function updateHighScore(score) {
 
 | 优先级 | 事项 |
 |-------|------|
-| 高 | 修复语言筛选：前端传 `zh`/`yue`，与 `songs.json` 的 `lang` 字段对齐 |
-| 中 | 扩充 `songs.json` 歌曲数量 |
+| 高 | 语言筛选：前端传 `zh`/`yue`，与 `songs-summary.json` 的 `lang` 字段一致 |
+| 中 | 通过新增/编辑 `data/*.json` 并运行 `aggregate-songs.js` 扩充歌库 |
 | 低 | 新纪录庆祝动画 |
 | 低 | 横屏适配优化 |
