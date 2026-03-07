@@ -47,6 +47,20 @@
 
     <div class="config-card">
       <div class="config-section">
+        <label class="config-label">游戏模式</label>
+        <div class="btn-group mode-group" id="mode-group">
+          <button class="chip difficulty-chip active" data-value="challenge">
+            <span class="diff-name">挑战</span>
+            <span class="diff-time">猜歌名</span>
+          </button>
+          <button class="chip difficulty-chip" data-value="casual">
+            <span class="diff-name">休闲</span>
+            <span class="diff-time">无限听</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="config-section">
         <label class="config-label">难度</label>
         <div class="btn-group difficulty-group" id="difficulty-group">
           <button class="chip difficulty-chip" data-value="easy">
@@ -80,48 +94,65 @@
 
 <!-- ===== 游戏主视图 ===== -->
 <div id="view-game" class="view">
-  <!-- 顶栏 -->
-  <div class="game-header">
-    <span id="round-progress">第 1 / 10 首</span>
-    <span id="score-display">得分: 0</span>
-  </div>
+  <div class="game-inner">
 
-  <!-- 专辑封面 -->
-  <div class="cover-wrapper">
-    <img id="album-cover" class="album-cover blurred" src="" alt="专辑封面">
-    <div class="cover-overlay" id="cover-overlay">
-      <span>🎵</span>
+    <!-- 顶栏 -->
+    <div class="game-header">
+      <button id="exit-game-btn" class="exit-game-btn" style="display:none">← 返回</button>
+      <span id="round-progress">第 1 / 10 首</span>
+      <span id="score-display">得分: 0</span>
     </div>
-  </div>
 
-  <!-- 播放器 -->
-  <div class="player-section">
-    <div class="progress-bar-wrapper">
-      <div class="progress-bar">
-        <div id="audio-progress" class="progress-fill"></div>
+    <!-- 专辑封面 -->
+    <div class="cover-wrapper">
+      <img id="album-cover" class="album-cover blurred" src="" alt="专辑封面">
+      <div class="cover-overlay" id="cover-overlay">
+        <span>🎵</span>
       </div>
-      <span id="time-display" class="time-text">0:00</span>
     </div>
-    <div class="player-controls">
-      <button id="replay-btn" class="replay-btn">↺ 重播</button>
-      <span id="play-status" class="play-status">正在播放…</span>
+
+    <!-- 播放器 -->
+    <div class="player-section">
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar">
+          <div id="audio-progress" class="progress-fill"></div>
+        </div>
+        <span id="time-display" class="time-text">0:00</span>
+      </div>
+      <div class="player-controls">
+        <button id="replay-btn" class="replay-btn">↺ 重播</button>
+        <span id="play-status" class="play-status">正在播放…</span>
+      </div>
     </div>
-  </div>
 
-  <!-- 歌名格子 -->
-  <div class="slots-section">
-    <div id="answer-slots" class="answer-slots"></div>
-  </div>
+    <!-- 歌名格子 -->
+    <div class="slots-section">
+      <div id="answer-slots" class="answer-slots"></div>
+    </div>
 
-  <!-- 备选字池 -->
-  <div class="char-pool-section">
-    <div id="char-pool" class="char-pool"></div>
-  </div>
+    <!-- 休闲模式：查看歌曲信息 -->
+    <div class="reveal-section" id="reveal-section" style="display:none">
+      <button id="reveal-btn" class="reveal-info-btn">👁 查看歌曲信息</button>
+      <div id="reveal-info" class="reveal-details" style="display:none">
+        <div id="reveal-song-name" class="reveal-song-name"></div>
+        <div id="reveal-artist" class="reveal-artist-name"></div>
+      </div>
+    </div>
 
-  <!-- 下一首按钮（答题后显示） -->
-  <div class="next-section" id="next-section" style="display:none">
-    <div id="feedback-banner" class="feedback-banner"></div>
-    <button id="next-btn" class="primary-btn">下一首 ▶</button>
+    <!-- 弹性空白，将答题反馈和字池推至底部 -->
+    <div class="game-spacer"></div>
+
+    <!-- 下一首按钮（答题后显示） -->
+    <div class="next-section" id="next-section" style="display:none">
+      <div id="feedback-banner" class="feedback-banner"></div>
+      <button id="next-btn" class="primary-btn">下一首 ▶</button>
+    </div>
+
+    <!-- 备选字池：固定在底部 -->
+    <div class="char-pool-section">
+      <div id="char-pool" class="char-pool"></div>
+    </div>
+
   </div>
 </div>
 
