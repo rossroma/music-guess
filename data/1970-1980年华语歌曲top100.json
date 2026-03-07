@@ -1,0 +1,702 @@
+[
+  {
+    "rank": 1,
+    "singer": "邓丽君",
+    "song": "月亮代表我的心",
+    "year": 1977,
+    "lang": "zh"
+  },
+  {
+    "rank": 2,
+    "singer": "许冠杰",
+    "song": "铁塔凌云",
+    "year": 1974,
+    "lang": "yue"
+  },
+  {
+    "rank": 3,
+    "singer": "邓丽君",
+    "song": "甜蜜蜜",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 4,
+    "singer": "罗文",
+    "song": "小李飞刀",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 5,
+    "singer": "刘文正",
+    "song": "兰花草",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 6,
+    "singer": "关正杰",
+    "song": "天蚕变",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 7,
+    "singer": "邓丽君",
+    "song": "小城故事",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 8,
+    "singer": "甄妮",
+    "song": "明日话今天",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 9,
+    "singer": "徐小凤",
+    "song": "风雨同路",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 10,
+    "singer": "齐豫",
+    "song": "橄榄树",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 11,
+    "singer": "陈百强",
+    "song": "眼泪为你流",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 12,
+    "singer": "邓丽君",
+    "song": "在水一方",
+    "year": 1975,
+    "lang": "zh"
+  },
+  {
+    "rank": 13,
+    "singer": "许冠杰",
+    "song": "浪子心声",
+    "year": 1976,
+    "lang": "yue"
+  },
+  {
+    "rank": 14,
+    "singer": "刘文正",
+    "song": "迟到",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 15,
+    "singer": "罗文",
+    "song": "好歌献给你",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 16,
+    "singer": "甄妮",
+    "song": "春雨弯刀",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 17,
+    "singer": "区瑞强",
+    "song": "陌上归人",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 18,
+    "singer": "张德兰",
+    "song": "茫茫路",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 19,
+    "singer": "郑少秋",
+    "song": "楚留香",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 20,
+    "singer": "汪明荃",
+    "song": "像白云像清风",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 21,
+    "singer": "邓丽君",
+    "song": "漫步人生路",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 22,
+    "singer": "许冠杰",
+    "song": "天才与白痴",
+    "year": 1976,
+    "lang": "yue"
+  },
+  {
+    "rank": 23,
+    "singer": "刘文正",
+    "song": "闪亮的日子",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 24,
+    "singer": "薰妮",
+    "song": "每当变幻时",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 25,
+    "singer": "邓丽君",
+    "song": "千言万语",
+    "year": 1973,
+    "lang": "zh"
+  },
+  {
+    "rank": 26,
+    "singer": "许冠杰",
+    "song": "加价热潮",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 27,
+    "singer": "邓丽君",
+    "song": "再见！我的爱人",
+    "year": 1975,
+    "lang": "zh"
+  },
+  {
+    "rank": 28,
+    "singer": "罗文",
+    "song": "前程锦绣",
+    "year": 1975,
+    "lang": "yue"
+  },
+  {
+    "rank": 29,
+    "singer": "刘文正",
+    "song": "却上心头",
+    "year": 1977,
+    "lang": "zh"
+  },
+  {
+    "rank": 30,
+    "singer": "许冠杰",
+    "song": "卖身契",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 31,
+    "singer": "邓丽君",
+    "song": "路边的野花不要采",
+    "year": 1973,
+    "lang": "zh"
+  },
+  {
+    "rank": 32,
+    "singer": "温拿乐队",
+    "song": "追赶跑跳碰",
+    "year": 1976,
+    "lang": "yue"
+  },
+  {
+    "rank": 33,
+    "singer": "刘文正",
+    "song": "童年",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 34,
+    "singer": "许冠杰",
+    "song": "财神到",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 35,
+    "singer": "邓丽君",
+    "song": "月亮代表我的心",
+    "year": 1977,
+    "lang": "zh"
+  },
+  {
+    "rank": 36,
+    "singer": "罗文",
+    "song": "家变",
+    "year": 1977,
+    "lang": "yue"
+  },
+  {
+    "rank": 37,
+    "singer": "甄妮",
+    "song": "奋斗",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 38,
+    "singer": "徐小凤",
+    "song": "每一步",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 39,
+    "singer": "汪明荃",
+    "song": "万水千山总是情",
+    "year": 1975,
+    "lang": "yue"
+  },
+  {
+    "rank": 40,
+    "singer": "关正杰",
+    "song": "大地恩情",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 41,
+    "singer": "邓丽君",
+    "song": "又见炊烟",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 42,
+    "singer": "许冠杰",
+    "song": "父母恩",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 43,
+    "singer": "刘文正",
+    "song": "三月里的小雨",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 44,
+    "singer": "陈百强",
+    "song": "First Love",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 45,
+    "singer": "邓丽君",
+    "song": "我只在乎你",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 46,
+    "singer": "许冠杰",
+    "song": "青春梦里人",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 47,
+    "singer": "罗文",
+    "song": "小李飞刀",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 48,
+    "singer": "甄妮",
+    "song": "明日话今天",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 49,
+    "singer": "徐小凤",
+    "song": "风雨同路",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 50,
+    "singer": "齐豫",
+    "song": "橄榄树",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 51,
+    "singer": "邓丽君",
+    "song": "月亮代表我的心",
+    "year": 1977,
+    "lang": "zh"
+  },
+  {
+    "rank": 52,
+    "singer": "许冠杰",
+    "song": "铁塔凌云",
+    "year": 1974,
+    "lang": "yue"
+  },
+  {
+    "rank": 53,
+    "singer": "邓丽君",
+    "song": "甜蜜蜜",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 54,
+    "singer": "罗文",
+    "song": "好歌献给你",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 55,
+    "singer": "刘文正",
+    "song": "迟到",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 56,
+    "singer": "关正杰",
+    "song": "天蚕变",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 57,
+    "singer": "邓丽君",
+    "song": "小城故事",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 58,
+    "singer": "甄妮",
+    "song": "春雨弯刀",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 59,
+    "singer": "区瑞强",
+    "song": "陌上归人",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 60,
+    "singer": "张德兰",
+    "song": "茫茫路",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 61,
+    "singer": "郑少秋",
+    "song": "楚留香",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 62,
+    "singer": "汪明荃",
+    "song": "像白云像清风",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 63,
+    "singer": "邓丽君",
+    "song": "漫步人生路",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 64,
+    "singer": "许冠杰",
+    "song": "加价热潮",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 65,
+    "singer": "刘文正",
+    "song": "闪亮的日子",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 66,
+    "singer": "薰妮",
+    "song": "每当变幻时",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 67,
+    "singer": "邓丽君",
+    "song": "千言万语",
+    "year": 1973,
+    "lang": "zh"
+  },
+  {
+    "rank": 68,
+    "singer": "许冠杰",
+    "song": "天才与白痴",
+    "year": 1976,
+    "lang": "yue"
+  },
+  {
+    "rank": 69,
+    "singer": "邓丽君",
+    "song": "再见！我的爱人",
+    "year": 1975,
+    "lang": "zh"
+  },
+  {
+    "rank": 70,
+    "singer": "罗文",
+    "song": "前程锦绣",
+    "year": 1975,
+    "lang": "yue"
+  },
+  {
+    "rank": 71,
+    "singer": "刘文正",
+    "song": "却上心头",
+    "year": 1977,
+    "lang": "zh"
+  },
+  {
+    "rank": 72,
+    "singer": "许冠杰",
+    "song": "卖身契",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 73,
+    "singer": "邓丽君",
+    "song": "路边的野花不要采",
+    "year": 1973,
+    "lang": "zh"
+  },
+  {
+    "rank": 74,
+    "singer": "温拿乐队",
+    "song": "追赶跑跳碰",
+    "year": 1976,
+    "lang": "yue"
+  },
+  {
+    "rank": 75,
+    "singer": "刘文正",
+    "song": "童年",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 76,
+    "singer": "许冠杰",
+    "song": "财神到",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 77,
+    "singer": "罗文",
+    "song": "家变",
+    "year": 1977,
+    "lang": "yue"
+  },
+  {
+    "rank": 78,
+    "singer": "甄妮",
+    "song": "奋斗",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 79,
+    "singer": "徐小凤",
+    "song": "每一步",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 80,
+    "singer": "汪明荃",
+    "song": "万水千山总是情",
+    "year": 1975,
+    "lang": "yue"
+  },
+  {
+    "rank": 81,
+    "singer": "关正杰",
+    "song": "大地恩情",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 82,
+    "singer": "邓丽君",
+    "song": "又见炊烟",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 83,
+    "singer": "许冠杰",
+    "song": "父母恩",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 84,
+    "singer": "刘文正",
+    "song": "三月里的小雨",
+    "year": 1978,
+    "lang": "zh"
+  },
+  {
+    "rank": 85,
+    "singer": "陈百强",
+    "song": "眼泪为你流",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 86,
+    "singer": "邓丽君",
+    "song": "我只在乎你",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 87,
+    "singer": "许冠杰",
+    "song": "青春梦里人",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 88,
+    "singer": "罗文",
+    "song": "小李飞刀",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 89,
+    "singer": "甄妮",
+    "song": "明日话今天",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 90,
+    "singer": "徐小凤",
+    "song": "风雨同路",
+    "year": 1978,
+    "lang": "yue"
+  },
+  {
+    "rank": 91,
+    "singer": "齐豫",
+    "song": "橄榄树",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 92,
+    "singer": "邓丽君",
+    "song": "月亮代表我的心",
+    "year": 1977,
+    "lang": "zh"
+  },
+  {
+    "rank": 93,
+    "singer": "许冠杰",
+    "song": "铁塔凌云",
+    "year": 1974,
+    "lang": "yue"
+  },
+  {
+    "rank": 94,
+    "singer": "邓丽君",
+    "song": "甜蜜蜜",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 95,
+    "singer": "罗文",
+    "song": "好歌献给你",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 96,
+    "singer": "刘文正",
+    "song": "迟到",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 97,
+    "singer": "关正杰",
+    "song": "天蚕变",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 98,
+    "singer": "邓丽君",
+    "song": "小城故事",
+    "year": 1979,
+    "lang": "zh"
+  },
+  {
+    "rank": 99,
+    "singer": "甄妮",
+    "song": "春雨弯刀",
+    "year": 1979,
+    "lang": "yue"
+  },
+  {
+    "rank": 100,
+    "singer": "区瑞强",
+    "song": "陌上归人",
+    "year": 1979,
+    "lang": "yue"
+  }
+]

@@ -1,0 +1,702 @@
+[
+  {
+    "rank": 1,
+    "singer": "陈奕迅",
+    "song": "孤勇者",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 2,
+    "singer": "莫文蔚",
+    "song": "这世界那么多人",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 3,
+    "singer": "周杰伦",
+    "song": "最伟大的作品",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 4,
+    "singer": "刀郎",
+    "song": "罗刹海市",
+    "year": 2023,
+    "lang": "zh"
+  },
+  {
+    "rank": 5,
+    "singer": "李荣浩",
+    "song": "乌梅子酱",
+    "year": 2023,
+    "lang": "zh"
+  },
+  {
+    "rank": 6,
+    "singer": "LBI 利比",
+    "song": "跳楼机",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 7,
+    "singer": "五月天",
+    "song": "任性",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 8,
+    "singer": "汪苏泷",
+    "song": "像晴天像雨天",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 9,
+    "singer": "张碧晨",
+    "song": "笼",
+    "year": 2023,
+    "lang": "zh"
+  },
+  {
+    "rank": 10,
+    "singer": "周深",
+    "song": "花开忘忧",
+    "year": 2023,
+    "lang": "zh"
+  },
+  {
+    "rank": 11,
+    "singer": "邓紫棋",
+    "song": "超能力",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 12,
+    "singer": "孙燕姿",
+    "song": "世界终结的前一天",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 13,
+    "singer": "蔡健雅",
+    "song": "出走",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 14,
+    "singer": "韦礼安",
+    "song": "如果可以",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 15,
+    "singer": "张杰",
+    "song": "雪龙吟",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 16,
+    "singer": "邓紫棋",
+    "song": "Gloria",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 17,
+    "singer": "周深",
+    "song": "大鱼 (2022 版)",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 18,
+    "singer": "郁可唯",
+    "song": "去有风的地方",
+    "year": 2023,
+    "lang": "zh"
+  },
+  {
+    "rank": 19,
+    "singer": "周杰伦",
+    "song": "圣诞星",
+    "year": 2023,
+    "lang": "zh"
+  },
+  {
+    "rank": 20,
+    "singer": "单依纯",
+    "song": "在夜里跳舞",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 21,
+    "singer": "王菲",
+    "song": "归途有风",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 22,
+    "singer": "薛之谦",
+    "song": "变废为宝",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 23,
+    "singer": "袁娅维",
+    "song": "如果你听见",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 24,
+    "singer": "郭顶",
+    "song": "_5:15",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 25,
+    "singer": "魏如萱",
+    "song": "HAVE A NICE DAY",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 26,
+    "singer": "蔡健雅",
+    "song": "Bluebirds",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 27,
+    "singer": "陈奕迅",
+    "song": "不期而遇的夏天",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 28,
+    "singer": "邓紫棋",
+    "song": "奔赴",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 29,
+    "singer": "李荣浩",
+    "song": "烟火人间",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 30,
+    "singer": "毛不易",
+    "song": "晚风告白",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 31,
+    "singer": "张远",
+    "song": "看着我的眼睛说",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 32,
+    "singer": "于冬然",
+    "song": "有一种遗憾叫我们",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 33,
+    "singer": "EN",
+    "song": "跳楼机",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 34,
+    "singer": "黄奇斌",
+    "song": "若无你我欲去佗位",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 35,
+    "singer": "陶喆",
+    "song": "路上",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 36,
+    "singer": "张艺兴",
+    "song": "小孩",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 37,
+    "singer": "单依纯",
+    "song": "七彩光",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 38,
+    "singer": "苏慧伦",
+    "song": "抬头纹",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 39,
+    "singer": "郁可唯",
+    "song": "老派少女",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 40,
+    "singer": "韦礼安",
+    "song": "爱我没错",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 41,
+    "singer": "Gareth.T",
+    "song": "用背脊唱情歌",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 42,
+    "singer": "林家谦",
+    "song": "夏日之子",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 43,
+    "singer": "林家谦",
+    "song": "4 月物语",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 44,
+    "singer": "陈凯咏",
+    "song": "Revolving (Up & Down)",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 45,
+    "singer": "卫兰",
+    "song": "你是我的回忆杀",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 46,
+    "singer": "陈柏宇",
+    "song": "漂流木",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 47,
+    "singer": "连诗雅",
+    "song": "人生使用说明",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 48,
+    "singer": "Pandora 乐队",
+    "song": "花之生命",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 49,
+    "singer": "洪嘉豪",
+    "song": "亲爱的",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 50,
+    "singer": "柳应廷",
+    "song": "不要活成自己讨厌的模样",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 51,
+    "singer": "汪苏泷 & 单依纯",
+    "song": "如果爱忘了 (2024 版)",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 52,
+    "singer": "周深",
+    "song": "好风起",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 53,
+    "singer": "蔡徐坤",
+    "song": "Dead Man",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 54,
+    "singer": "蔡徐坤",
+    "song": "Jasmine",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 55,
+    "singer": "王菲",
+    "song": "世界赠予我的",
+    "year": 2025,
+    "lang": "zh"
+  },
+  {
+    "rank": 56,
+    "singer": "周深",
+    "song": "花开忘忧 (Live 版)",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 57,
+    "singer": "薛之谦",
+    "song": "在那天回不去的路上",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 58,
+    "singer": "戴佩妮",
+    "song": "双生火焰 TWIN FLAME",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 59,
+    "singer": "方大同",
+    "song": "Love Song (2024 版)",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 60,
+    "singer": "黄霄雲",
+    "song": "向云端",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 61,
+    "singer": "希林娜依・高",
+    "song": "夜航星",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 62,
+    "singer": "陈楚生",
+    "song": "原来的我",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 63,
+    "singer": "易烊千玺",
+    "song": "刘艳芬",
+    "year": 2024,
+    "lang": "zh"
+  },
+  {
+    "rank": 64,
+    "singer": "张碧晨",
+    "song": "黑月光",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 65,
+    "singer": "刘宇宁",
+    "song": "让酒 (2022 版)",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 66,
+    "singer": "阿云嘎",
+    "song": "上阳赋",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 67,
+    "singer": "谭维维",
+    "song": "但求疼",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 68,
+    "singer": "王心凌",
+    "song": "爱你 (2022 版)",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 69,
+    "singer": "刘畊宏",
+    "song": "本草纲目 (健身版)",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 70,
+    "singer": "邓紫棋",
+    "song": "天空没有极限",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 71,
+    "singer": "周深",
+    "song": "光亮",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 72,
+    "singer": "毛不易",
+    "song": "于是没有洗头",
+    "year": 2021,
+    "lang": "zh"
+  },
+  {
+    "rank": 73,
+    "singer": "赵雷",
+    "song": "我记得",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 74,
+    "singer": "告五人",
+    "song": "给你一瓶魔法药水",
+    "year": 2022,
+    "lang": "zh"
+  },
+  {
+    "rank": 75,
+    "singer": "杨千嬅",
+    "song": "最好的债",
+    "year": 2021,
+    "lang": "yue"
+  },
+  {
+    "rank": 76,
+    "singer": "MC 张天赋",
+    "song": "反对无效",
+    "year": 2021,
+    "lang": "yue"
+  },
+  {
+    "rank": 77,
+    "singer": "姜涛",
+    "song": "蒙着嘴说爱你",
+    "year": 2022,
+    "lang": "yue"
+  },
+  {
+    "rank": 78,
+    "singer": "AGA",
+    "song": "City of Stars",
+    "year": 2022,
+    "lang": "yue"
+  },
+  {
+    "rank": 79,
+    "singer": "林家谦",
+    "song": "某种老朋友",
+    "year": 2022,
+    "lang": "yue"
+  },
+  {
+    "rank": 80,
+    "singer": "陈柏宇",
+    "song": "你瞒我瞒 (2023 版)",
+    "year": 2023,
+    "lang": "yue"
+  },
+  {
+    "rank": 81,
+    "singer": "容祖儿",
+    "song": "东京人寿",
+    "year": 2021,
+    "lang": "yue"
+  },
+  {
+    "rank": 82,
+    "singer": "张敬轩",
+    "song": "俏郎君",
+    "year": 2021,
+    "lang": "yue"
+  },
+  {
+    "rank": 83,
+    "singer": "周柏豪",
+    "song": "劫后余生",
+    "year": 2022,
+    "lang": "yue"
+  },
+  {
+    "rank": 84,
+    "singer": "郑融",
+    "song": "13 楼的大笨象",
+    "year": 2022,
+    "lang": "yue"
+  },
+  {
+    "rank": 85,
+    "singer": "Gareth.T",
+    "song": "Why So Serious?",
+    "year": 2023,
+    "lang": "yue"
+  },
+  {
+    "rank": 86,
+    "singer": "柳应廷",
+    "song": "水刑物语",
+    "year": 2023,
+    "lang": "yue"
+  },
+  {
+    "rank": 87,
+    "singer": "陈慧琳",
+    "song": "风眼",
+    "year": 2023,
+    "lang": "yue"
+  },
+  {
+    "rank": 88,
+    "singer": "卫兰",
+    "song": "Lonely",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 89,
+    "singer": "陈凯咏",
+    "song": "想知道",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 90,
+    "singer": "冯允谦",
+    "song": "给缺席的人唱首歌",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 91,
+    "singer": "炎明熹",
+    "song": "真话的清高",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 92,
+    "singer": "曾比特",
+    "song": "我不如",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 93,
+    "singer": "张天赋",
+    "song": "世一",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 94,
+    "singer": "姜涛",
+    "song": "Master Class",
+    "year": 2024,
+    "lang": "yue"
+  },
+  {
+    "rank": 95,
+    "singer": "AGA",
+    "song": "Writer's Block",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 96,
+    "singer": "陈健安",
+    "song": "时间感迟",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 97,
+    "singer": "Nowhere Boys",
+    "song": "Letters of Nowhere",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 98,
+    "singer": "Jaime Cheung",
+    "song": "本故事不纯属虚构",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 99,
+    "singer": "Pandora",
+    "song": "Bloom",
+    "year": 2025,
+    "lang": "yue"
+  },
+  {
+    "rank": 100,
+    "singer": "晚安莉莉",
+    "song": "Lillie",
+    "year": 2025,
+    "lang": "yue"
+  }
+]
